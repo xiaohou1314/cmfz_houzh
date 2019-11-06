@@ -16,6 +16,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class CmfzHouzhApplication {
 
     public static void main(String[] args) {
+        System.out.println("=======================");
         SpringApplication.run(CmfzHouzhApplication.class, args);
     }
 
