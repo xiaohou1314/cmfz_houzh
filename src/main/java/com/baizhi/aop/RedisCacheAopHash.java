@@ -25,7 +25,7 @@ public class RedisCacheAopHash {
     @Autowired
     private Jedis jedis;
 
-    @Around("execution(* com.baizhi.service.*impl.selectAll(..))")
+    @Around("execution(* com.baizhi.service.*Impl.selectAll(..))")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         Object target = proceedingJoinPoint.getTarget();
         MethodSignature methodSignature = (MethodSignature) proceedingJoinPoint.getSignature();
@@ -63,7 +63,7 @@ public class RedisCacheAopHash {
         }
     }
 
-    @After("execution(* com.baizhi.service.*impl.*(..)) && !execution(* com.baizhi.service.*impl.selectAll(..))")
+    @After("execution(* com.baizhi.service.*Impl.*(..)) && !execution(* com.baizhi.service.*Impl.selectAll(..))")
     public void after(JoinPoint joinPoint){
         Object target = joinPoint.getTarget();
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
